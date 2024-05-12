@@ -5,7 +5,7 @@ import plotly.graph_objects as go
 
 cg = CoinGeckoAPI()
 
-bitcoin_infos = cg.get_coin_market_chart_by_id(id = 'bitcoin', vs_currency='brl',days=360)
+bitcoin_infos = cg.get_coin_market_chart_by_id(id = 'bitcoin', vs_currency='brl',days=30)
 
 bitcoindf = pd.DataFrame(bitcoin_infos['prices'],columns=['TimeStamp','Price'])
 bitcoindf['Data'] = pd.to_datetime(bitcoindf['TimeStamp'],unit='ms')
